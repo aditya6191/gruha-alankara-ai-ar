@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Design Preview - Gruha Alankara{% endblock %}
+
+{% block content %}
+<div class="result-layout">
+    <div class="sidebar panel">
+        <h3>AI Design Details</h3>
+        <p><strong>Room:</strong> {{ (room_type or 'living_room')|replace('_', ' ')|title }}</p>
+        <p><strong>Style:</strong> {{ (style_preference or 'modern')|replace('_', ' ')|title }}</p>
+        
+        <div class="furniture-recommendations">
+            <h4>Recommended Furniture</h4>
+            <ul>
+                <li>Modern Velvet Sofa - $899</li>
+                <li>Glass Coffee Table - $250</li>
+                <li>Abstract Floor Lamp - $120</li>
+            </ul>
+        </div>
+        
+        <button class="btn primary full-width" id="book-furniture-btn">Book Furniture</button>
+    </div>
+
+    <div class="main-preview panel">
+        <div class="view-toggles">
+            <button class="toggle-btn active" id="btn-2d">2D Render</button>
+            <button class="toggle-btn" id="btn-ar" onclick="startCamera()">AR Preview</button>
+        </div>
+
+        <div class="visualization-area">
+            <!-- 2D Image Placeholder -->
+                <div id="view-2d" class="view-content active">
+                {% if generated_image_path %}
+                    <img src="{{ generated_image_path }}" alt="AI Generated Design" class="placeholder-image">
+                {% else %}
+                    <div class="placeholder-image">
+                        <p>AI Generated Render Appears Here</p>
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- AR Camera View -->
+            <div id="view-ar" class="view-content" style="display: none;">
+                <div class="preview-container no-margin">
+                    <video id="camera-feed" autoplay playsinline style="display: none;"></video>
+                    <div id="ar-overlay" class="ar-elements" style="display: none;">
+                        <p class="ar-status">Place your phone to scan the floor...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

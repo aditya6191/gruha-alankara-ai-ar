@@ -1,0 +1,2 @@
+2026-03-12 19:23:07,065 INFO: Gruha Alankara startup via Waitress WSGI [in C:\Users\as130\.gemini\antigravity\scratch\gruha_alankara\wsgi.py:19]
+2026-03-12 19:23:07,070 INFO: Serving on http://0.0.0.0:8080 [in C:\Users\as130\.gemini\antigravity\scratch\gruha_alankara\venv\Lib\site-packages\waitress\wasyncore.py:449]

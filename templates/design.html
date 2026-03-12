@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Design - Gruha Alankara{% endblock %}
+
+{% block content %}
+<div class="design-container">
+    <h2>Start Your Design Journey</h2>
+    <p>Select your preferences below to let our AI Assistant craft the perfect room.</p>
+    
+    <form class="design-form" id="design-form" action="{{ url_for('preview') }}" method="POST" enctype="multipart/form-data">
+        <label for="room-type">Room Type</label>
+        <select id="room-type" name="room_type" required>
+            <option value="" disabled selected>Select Room</option>
+            <option value="living_room">Living Room</option>
+            <option value="bedroom">Bedroom</option>
+            <option value="kitchen">Kitchen</option>
+            <option value="bathroom">Bathroom</option>
+        </select>
+
+        <label>Style Preference</label>
+        <div class="style-options">
+            <div class="style-card" data-style="minimalist">
+                <div class="style-visual minimalist-bg"></div>
+                <span>Minimalist</span>
+            </div>
+            <div class="style-card" data-style="modern">
+                <div class="style-visual modern-bg"></div>
+                <span>Modern</span>
+            </div>
+            <div class="style-card" data-style="classic">
+                <div class="style-visual classic-bg"></div>
+                <span>Classic Dark</span>
+            </div>
+        </div>
+        <input type="hidden" name="style_preference" id="style_preference" required>
+
+        <label for="room-photo">Upload Room Photo (Optional)</label>
+        <input type="file" id="room-photo" name="room_photo" accept="image/*">
+
+        <button type="submit" class="btn primary full-width" id="generate-btn" onclick="showLoader()">Generate Design</button>
+    </form>
+    
+    <div id="loading-overlay" style="display: none; text-align: center; margin-top: 1rem;">
+        <div class="loader-spinner"></div>
+        <p>AI is crafting your space...</p>
+    </div>
+</div>
+{% endblock %}

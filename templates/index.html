@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Gruha Alankara{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Welcome to Gruha Alankara</h1>
+    <p>Professional-grade home styling powered by Augmented Reality and Agentic AI.</p>
+    <div class="cta-buttons">
+        <button class="btn primary" onclick="startCamera()">Try AR Preview</button>
+        <button class="btn secondary" id="home-upload-btn">Upload Room Photo</button>
+    </div>
+</div>
+
+<!-- Simple direct upload-to-preview flow from the home page -->
+<form id="home-upload-form" action="{{ url_for('preview') }}" method="POST" enctype="multipart/form-data" style="display:none;">
+    <input type="hidden" name="room_type" value="living_room">
+    <input type="hidden" name="style_preference" value="modern">
+    <input type="file" id="home-room-photo" name="room_photo" accept="image/*">
+</form>
+
+<div class="preview-container">
+    <video id="camera-feed" autoplay playsinline style="display: none;"></video>
+    <div id="ar-overlay" style="display: none;">
+        <p class="ar-status">Point your camera at the room to preview AR furniture.</p>
+    </div>
+</div>
+{% endblock %}

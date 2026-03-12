@@ -1,0 +1,362 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #1f1f1f;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ff9800;
+}
+
+/* Main Content area */
+main {
+    min-height: calc(100vh - 140px); /* accounting for header & footer */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #b0b0b0;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn.primary {
+    background-color: #ff9800;
+    color: #121212;
+}
+
+.btn.primary:hover {
+    background-color: #e68a00;
+}
+
+.btn.secondary {
+    background-color: transparent;
+    color: #ff9800;
+    border: 2px solid #ff9800;
+}
+
+.btn.secondary:hover {
+    background-color: #ff9800;
+    color: #121212;
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 1rem;
+    color: #777;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Preview Camera wrapper */
+.preview-container {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 800px;
+    border: 2px dashed #333;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+}
+
+#camera-feed {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Design Form Styles */
+.design-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+.design-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.design-form label {
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.design-form select, .design-form input[type="file"] {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.style-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.style-card {
+    flex: 1;
+    background-color: #2a2a2a;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.style-card:hover, .style-card.selected {
+    border-color: #ff9800;
+    transform: translateY(-5px);
+}
+
+.style-visual {
+    height: 80px;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    background-color: #444;
+}
+
+.minimalist-bg { background: linear-gradient(135deg, #e0e0e0, #bdbdbd); }
+.modern-bg { background: linear-gradient(135deg, #2196f3, #0d47a1); }
+.classic-bg { background: linear-gradient(135deg, #795548, #3e2723); }
+
+.full-width {
+    width: 100%;
+}
+
+/* Result Layout Styles */
+.result-layout {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.panel {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.sidebar h3, .sidebar h4 {
+    color: #ff9800;
+    margin-bottom: 1rem;
+}
+
+.sidebar p {
+    margin-bottom: 0.5rem;
+}
+
+.furniture-recommendations {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+}
+
+.furniture-recommendations ul {
+    list-style: none;
+    margin-top: 0.5rem;
+}
+
+.furniture-recommendations li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #444;
+}
+
+.furniture-recommendations li:last-child {
+    border-bottom: none;
+}
+
+.main-preview {
+    flex-grow: 1;
+}
+
+.view-toggles {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.toggle-btn {
+    padding: 0.5rem 1rem;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-btn.active, .toggle-btn:hover {
+    background-color: #ff9800;
+    color: #121212;
+    border-color: #ff9800;
+}
+
+.visualization-area {
+    width: 100%;
+    height: 500px;
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.view-content {
+    width: 100%;
+    height: 100%;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: repeating-linear-gradient(45deg, #111, #111 10px, #222 10px, #222 20px);
+    color: #ff9800;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.no-margin {
+    margin-top: 0;
+    border: none;
+    border-radius: 0;
+    height: 100%;
+}
+
+.ar-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.ar-status {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ff9800;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Loading Overlay and Spinner */
+.loader-spinner {
+    border: 4px solid #333;
+    border-top: 4px solid #ff9800;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
